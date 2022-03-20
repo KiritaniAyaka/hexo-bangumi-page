@@ -40,9 +40,9 @@ hexo bangumi -c
 ```yaml
 bangumi:
   user: {userId} # 必填 你的 userid
-	# 在 bangumi 个人页面的 url 中的一串字符串（如果你设置了）或数字
-	showImgAlt: false # 选填 true|false 默认 true
-	# 有的主题会对带有 alt 的 img 标签生成奇怪的标签破坏布局
+  # 在 bangumi 个人页面的 url 中的一串字符串（如果你设置了）或数字
+  showImgAlt: false # 选填 true|false 默认 true
+  # 有的主题会对带有 alt 的 img 标签生成奇怪的标签破坏布局
 ```
 
 # 效果
