@@ -1,6 +1,6 @@
 {
 	"name": "hexo-bangumi-page",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Create Bangumi page on your Hexo blog.",
 	"main": "index.js",
 	"scripts": {
