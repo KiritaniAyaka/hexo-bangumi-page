@@ -1,0 +1,17 @@
+<div class="bangumi-item" id="bangumi-item-{{ id }}">
+	<img src="{{ img }}" alt="{{ originTitle }}">
+	<div class="detail">
+		<div class="title">
+			<span class="cn">{{ title }}</span>
+			<span class="origin">{{ originTitle }}</span>
+			<span class="tag">{{ status }}</span>
+		</div>
+		<p class="summary">
+			{{ summary }}
+		</p>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: {{ progress }}%;" aria-valuenow="{{ progress }}"
+				aria-valuemin="0" aria-valuemax="100">{{ cur }} / {{ max }}</div>
+		</div>
+	</div>
+</div>

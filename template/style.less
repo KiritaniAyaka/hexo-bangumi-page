@@ -1,0 +1,141 @@
+.bangumi-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	.bangumi-item {
+		display: flex;
+		max-width: 970px;
+		align-items: stretch;
+		margin: 0.75rem;
+		border-radius: 0.5rem;
+		overflow: hidden;
+		box-shadow: 0 0 0.6rem rgba(16, 16, 16, 0.2);
+		transition: 0.3s;
+
+		&:hover {
+			box-shadow: 0 0 1rem rgba(16, 16, 16, 0.3);
+			transform: translateY(-0.2rem);
+		}
+
+		img {
+			width: 7rem;
+			height: 100%;
+		}
+
+		.detail {
+			flex: 1;
+			padding: 0 0.8rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.title {
+			font-weight: normal;
+			margin: 0.4rem 0;
+			user-select: none;
+
+			&>span {
+				display: inline-block;
+
+				&.cn {
+					transition: 0.3s;
+					font-size: 1rem;
+					line-height: 1.3rem;
+
+					&:hover {
+						color: rgb(255, 171, 208);
+						cursor: pointer;
+					}
+				}
+
+				&.origin {
+					font-size: 0.6rem;
+					line-height: 0.95rem;
+					color: rgb(80, 80, 80);
+				}
+
+				&.tag {
+					background-color: rgb(255, 171, 208);
+					color: white;
+					font-size: 0.55rem;
+					padding: 0.15rem;
+					border-radius: 0.3rem;
+					line-height: 0.9rem;
+				}
+
+
+				@media (min-width:768px) {
+					&.cn {
+						font-size: 1rem;
+					}
+				}
+
+				@media (max-width:768px) {
+					&.cn {
+						font-size: 0.9rem;
+					}
+				}
+
+				@media (max-width: 576px) {
+					&.cn {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+
+		.progress {
+			display: flex;
+			height: 1.2rem;
+			overflow: hidden;
+			font-size: 0.7rem;
+			background-color: #e9ecef;
+			border-radius: 0.25rem;
+			user-select: none;
+			margin: 0.5rem 0;
+		}
+
+		.progress-bar {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			overflow: hidden;
+			color: #fff;
+			text-align: center;
+			white-space: nowrap;
+			background-color: rgb(255, 171, 208);
+			transition: width 0.6s ease;
+
+			@media (min-width: 992px) {
+				min-width: 12%;
+			}
+
+			@media (max-width: 992px) {
+				min-width: 16%;
+			}
+
+			@media (max-width: 768px) {
+				min-width: 22%;
+			}
+
+			@media (max-width: 576px) {
+				min-width: 30%;
+			}
+		}
+
+		.detail p.summary {
+			margin: 0;
+			font-size: 0.65rem;
+			width: 100%;
+			line-height: 1rem;
+			color: rgb(48, 48, 48);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+		}
+	}
+}
