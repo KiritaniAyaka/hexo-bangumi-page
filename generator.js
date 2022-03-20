@@ -3,14 +3,15 @@ const path = require('path')
 const fs = require('hexo-fs')
 const less = require('less')
 const log = require('hexo-log')({
-	debug: true,
+	debug: false,
 	silent: false
 });
 
 const collectionType = ['', '想看', '看过', '在看', '搁置', '抛弃']
 
 module.exports = {
-	async generate(dir) {
+	async generate(dir, config) {
+		log.d(config)
 		const bangumis = require(path.join(dir, './bangumi.json'))
 		const details = require(path.join(dir, './bangumi_detail.json'))
 		let result = ''
@@ -27,10 +28,10 @@ module.exports = {
 				summary: detail.summary,
 				max: detail.eps,
 				cur: bangumi.ep_status,
-				progress: detail.eps == 0 ? 100 : bangumi.ep_status / detail.eps * 100
+				progress: detail.eps == 0 ? 100 : bangumi.ep_status / detail.eps * 100,
+				imgAlt: config.showImgAlt == null ? true : config.showImgAlt
 			})
 			i++
-			log.d(detail.name_cn)
 		}
 		return await generatorData(result)
 	}

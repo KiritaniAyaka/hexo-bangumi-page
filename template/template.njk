@@ -1,5 +1,9 @@
 <div class="bangumi-item" id="bangumi-item-{{ id }}">
-	<img src="{{ img }}" alt="{{ originTitle }}">
+	<img src="{{ img }}"
+		{% if imgAlt %}
+			alt="{{ originTitle }}"
+		{% endif %}
+	>
 	<div class="detail">
 		<div class="title">
 			<span class="cn">{{ title }}</span>

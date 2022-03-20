@@ -1,7 +1,7 @@
 const fs = require('hexo-fs')
 const fss = require('fs')
 const log = require('hexo-log')({
-	debug: true,
+	debug: false,
 	silent: false
 })
 
@@ -20,7 +20,7 @@ const $ = axios.create({
 
 hexo.extend.generator.register('bangumi', async function (locals) {
 	const { generate } = require('./generator.js')
-	return await generate(hexo.base_dir)
+	return await generate(hexo.base_dir, hexo.config.bangumi)
 });
 
 hexo.extend.console.register('bangumi', 'Operate local bangumi data.', {
@@ -101,7 +101,6 @@ const numPerPage = 50
 
 async function getBangumiList(arr, user, offset) {
 	const { data: response } = await $.get(`/v0/users/${user}/collections?limit=${numPerPage}&offset=${offset}&subject_type=2`)
-	log.d(response)
 	const { data, total, limit } = response
 	for (const item of data) {
 		arr.push(item)
