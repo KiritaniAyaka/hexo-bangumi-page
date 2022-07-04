@@ -24,7 +24,6 @@
 	"homepage": "https://github.com/KiritaniAyaka/hexo-bangumi-page#readme",
 	"devDependencies": {
 		"@types/hexo": "^3.8.7",
-		"@types/hexo-fs": "^0.2.10",
 		"@types/hexo-log": "^0.2.3",
 		"@types/nunjucks": "^3.2.1",
 		"eslint": "^8.19.0",
@@ -33,7 +32,6 @@
 	},
 	"dependencies": {
 		"axios": "^0.26.1",
-		"hexo-fs": "^3.1.0",
 		"hexo-log": "^3.0.0",
 		"less": "^4.1.2",
 		"nunjucks": "^3.2.3"
