@@ -2,6 +2,8 @@
 
 为你的 Hexo 博客创建 [Bangumi 番组计划](https://bangumi.tv/) 番剧页面。
 
+![Visitors](https://visit-count.vercel.app/api/count?id=KiritaniAyaka.hexo-bangumi-page)
+
 # 使用
 
 ## 安装插件
