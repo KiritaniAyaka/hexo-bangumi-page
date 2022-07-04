@@ -26,7 +26,10 @@
 		"@types/hexo": "^3.8.7",
 		"@types/hexo-fs": "^0.2.10",
 		"@types/hexo-log": "^0.2.3",
-		"@types/nunjucks": "^3.2.1"
+		"@types/nunjucks": "^3.2.1",
+		"eslint": "^8.19.0",
+		"prettier": "^2.7.1",
+		"prettier-eslint": "^15.0.1"
 	},
 	"dependencies": {
 		"axios": "^0.26.1",
