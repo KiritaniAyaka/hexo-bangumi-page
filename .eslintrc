@@ -1,0 +1,7 @@
+{
+	"extends": "@kiritaniayaka",
+	"ignorePatterns": ["node_modules"],
+	"globals": {
+		"hexo": "writable"
+	}
+}

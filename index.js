@@ -5,7 +5,7 @@ const { clearCache, updateBangumiList, updateBangumiDetail } = require('./lib')(
 )
 const { generate } = require('./lib/generator.js')
 
-hexo.extend.generator.register('bangumi', async function () {
+hexo.extend.generator.register('bangumi', async () => {
 	log.d('hexo-bangumi-page: generate')
 	return await generate(hexo.base_dir, hexo.config.bangumi)
 })
@@ -20,7 +20,7 @@ hexo.extend.console.register(
 			{ name: '-c, --clean', desc: 'Clean bangumi detail cache.' },
 		],
 	},
-	async function (args) {
+	async (args) => {
 		log.d('args:', args)
 		if (args.c || args.clean) {
 			clearCache()
