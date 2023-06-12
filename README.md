@@ -48,6 +48,7 @@ bangumi:
   showImgAlt: false # 选填 true|false 默认 true
   # 有的主题会对带有 alt 的 img 标签生成奇怪的标签破坏布局
   cover: large # 生成的番剧封面类型 值为 'grid', 'small', 'common', 'medium', 'large' 其中之一 默认为 large
+  perPage: 20 # 每页展示的番剧数 默认不分页
 ```
 
 # 效果
