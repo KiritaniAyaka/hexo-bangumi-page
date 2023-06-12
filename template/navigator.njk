@@ -1,0 +1,21 @@
+<nav id="pagination">
+	{% if prev != 0 %}
+		<a class="page" rel="prev" href="{{ prev_link }}">
+			<i class="fas fa-chevron-left fa-fw"></i>
+		</a>
+	{% endif %}
+
+	{% for i in range(1, total + 1) %}
+		{% if i == current %}
+			<span class="page cur">{{ current }}</span>
+		{% else %}
+			<a class="page" href="{{ '/bangumi/' if i == 1 else '/bangumi/' + i }}">{{ i }}</a>
+		{% endif %}
+	{% endfor %}
+
+	{% if next != 0 %}
+		<a class="page" rel="next" href="{{ next_link }}">
+			<i class="fas fa-chevron-right fa-fw"></i>
+		</a>
+	{% endif %}
+</nav>

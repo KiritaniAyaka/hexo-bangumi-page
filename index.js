@@ -1,3 +1,5 @@
+const less = require('less')
+const { readString } = require('./lib/util')
 const log = require('./lib/logger')
 
 const { clearCache, updateBangumiList, updateBangumiDetail } = require('./lib')(
@@ -9,6 +11,14 @@ hexo.extend.generator.register('bangumi', async () => {
 	log.d('hexo-bangumi-page: generate')
 	return await generate(hexo.base_dir, hexo.config.bangumi)
 })
+
+hexo.extend.generator.register('bangumi-css', _locals => ({
+	path: 'css/bangumi.css',
+	data: async () => {
+		const { css: style } = await less.render(readString('../template/style.less'))
+		return style
+	},
+}))
 
 hexo.extend.console.register(
 	'bangumi',
