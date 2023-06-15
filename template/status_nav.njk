@@ -1,0 +1,9 @@
+<nav id="status-nav">
+	{% for status in statuses %}
+		{% if status.cur %}
+			<span class="page cur">{{ status.name }}</span>
+		{% else %}
+			<a class="page" href="{{ '/bangumi' + (status.path or '') }}/">{{ status.name }}</a>
+		{% endif %}
+	{% endfor %}
+</nav>

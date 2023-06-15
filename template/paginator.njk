@@ -1,6 +1,6 @@
 <nav id="pagination">
 	{% if prev != 0 %}
-		<a class="page" rel="prev" href="{{ prev_link }}">
+		<a class="page" rel="prev" href="{{ normalizePath(prev_link) }}">
 			<i class="fas fa-chevron-left fa-fw"></i>
 		</a>
 	{% endif %}
@@ -9,12 +9,12 @@
 		{% if i == current %}
 			<span class="page cur">{{ current }}</span>
 		{% else %}
-			<a class="page" href="{{ '/bangumi/' if i == 1 else '/bangumi/' + i }}">{{ i }}</a>
+			<a class="page" href="{{ normalizePath(base + ('' if i == 1 else i)) }}">{{ i }}</a>
 		{% endif %}
 	{% endfor %}
 
 	{% if next != 0 %}
-		<a class="page" rel="next" href="{{ next_link }}">
+		<a class="page" rel="next" href="{{ normalizePath(next_link) }}">
 			<i class="fas fa-chevron-right fa-fw"></i>
 		</a>
 	{% endif %}
