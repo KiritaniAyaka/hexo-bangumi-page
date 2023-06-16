@@ -1,21 +1,30 @@
-<div class="bangumi-item" id="bangumi-item-{{ id }}">
-	<img src="{{ img }}"
-		{% if imgAlt %}
-			alt="{{ originTitle }}"
-		{% endif %}
-	>
-	<div class="detail">
-		<div class="title">
-			<span class="cn" title="{{ title }}">{{ title }}</span>
-			<span class="origin" title="{{ originTitle }}">{{ originTitle }}</span>
-			<span class="tag">{{ status }}</span>
+<div class="bangumi-list">
+	{% for bgm in data %}
+		<div class="bangumi-item" id="bangumi-item-{{ bgm.id }}">
+			<img src="{{ bgm.img }}"
+				{% if imgAlt %}
+					alt="{{ bgm.originTitle }}"
+				{% endif %}
+			>
+			<div class="detail">
+				<div class="title">
+					<span class="cn" title="{{ bgm.title }}">{{ bgm.title }}</span>
+					<span class="origin" title="{{ bgm.originTitle }}">{{ bgm.originTitle }}</span>
+					<span class="tag">{{ bgm.status }}</span>
+				</div>
+				<p class="summary">
+					{{ bgm.summary }}
+				</p>
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" style="width: {{ bgm.progress }}%;" aria-valuenow="{{ bgm.progress }}"
+						aria-valuemin="0" aria-valuemax="100">{{ bgm.cur }} / {{ bgm.max }}</div>
+				</div>
+			</div>
 		</div>
-		<p class="summary">
-			{{ summary }}
-		</p>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: {{ progress }}%;" aria-valuenow="{{ progress }}"
-				aria-valuemin="0" aria-valuemax="100">{{ cur }} / {{ max }}</div>
+	{% else %}
+		<div class="empty">
+			<i class="fas fa-box-open fa-fw"></i>
+			<span>这里还没有番剧哦~</span>
 		</div>
-	</div>
+	{% endfor %}
 </div>

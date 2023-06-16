@@ -155,6 +155,19 @@
 			-webkit-line-clamp: 3;
 		}
 	}
+
+	>div.empty {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: rgb(80, 80, 80);
+
+		>i {
+			font-size: 2.5rem;
+			margin: 2rem 0;
+			opacity: .7;
+		}
+	}
 }
 
 #pagination,
@@ -192,7 +205,7 @@
 #status-nav {
 	margin: 0 0 1rem 0;
 	text-align: left;
-	
+
 	.page {
 		width: 5rem;
 		margin: 0 .5rem 1rem .5rem;
